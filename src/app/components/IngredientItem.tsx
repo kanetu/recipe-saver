@@ -1,3 +1,5 @@
+"use client"
+import React from "react";
 import CheckIcon from "../icons/Check";
 
 interface IngredientItemProps {
@@ -6,9 +8,14 @@ interface IngredientItemProps {
 }
 const IngredientItem: React.FC<IngredientItemProps> = ({ name, amount }) => {
   return (
-    <div className="border-2 border-solid border-gray rounded-lg p-[10px] m-[10px]">
-      <CheckIcon className="w-[20px] h-[20px]" /> {name}:
-      <span className="text-red-600">{amount}</span>
+    <div className="flex pointer items-center border-2 border-solid border-gray rounded-lg m-[5px]">
+      <span className="p-[5px] border-r-2 border-gray-400">
+      <CheckIcon className="w-[20px] h-[20px]" />
+        </span>
+      <span className="p-[5px]">
+        {name}:
+        <span className="text-red-600">{amount}</span>
+      </span>
     </div>
   );
 };
